@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mon site | Accueil</title>
+  <meta name="description" content="Présente en une phrase ce que tu fais/offres." />
+  <link rel="icon" href="assets/favicon.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- En-tête + navigation -->
+  <header class="container">
+    <nav class="nav">
+      <a class="logo" href="/">MonSite</a>
+      <button class="burger" aria-expanded="false" aria-controls="menu">☰</button>
+      <ul id="menu" class="menu">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#projets">Projets</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <section class="hero">
+      <h1>Je t’aide à <span class="accent">faire X</span></h1>
+      <p>Phrase de valeur claire en une ligne.</p>
+      <a class="btn" href="#contact">Me contacter</a>
+    </section>
+  </header>
+
+  <!-- Contenu principal -->
+  <main class="container">
+    <section id="services">
+      <h2>Services</h2>
+      <div class="grid">
+        <article class="card"><h3>Service A</h3><p>Brève description.</p></article>
+        <article class="card"><h3>Service B</h3><p>Brève description.</p></article>
+        <article class="card"><h3>Service C</h3><p>Brève description.</p></article>
+      </div>
+    </section>
+
+    <section id="projets">
+      <h2>Projets</h2>
+      <div class="grid">
+        <article class="card"><img src="assets/projet1.jpg" alt="Aperçu projet 1"><h3>Projet 1</h3></article>
+        <article class="card"><img src="assets/projet2.jpg" alt="Aperçu projet 2"><h3>Projet 2</h3></article>
+        <article class="card"><img src="assets/projet3.jpg" alt="Aperçu projet 3"><h3>Projet 3</h3></article>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <!-- Formulaire via Formspree (remplace l'URL ci-dessous par la tienne) -->
+      <form action="https://formspree.io/f/xxxxxxxx" method="POST" class="form">
+        <label>Nom <input name="name" required></label>
+        <label>Email <input name="email" type="email" required></label>
+        <label>Message <textarea name="message" required></textarea></label>
+        <button class="btn" type="submit">Envoyer</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="container footer">
+    <small>© <span id="year"></span> Ton Nom — Tous droits réservés.</small>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
