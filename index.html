@@ -1,68 +1,75 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Mon site | Accueil</title>
-  <meta name="description" content="Présente en une phrase ce que tu fais/offres." />
-  <link rel="icon" href="assets/favicon.png" />
-  <link rel="stylesheet" href="styles.css" />
+    <base target="_self">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AFER - Agence Française des Énergies Renouvelables</title>
+    <meta name="description" content="AFER, expert en rénovation énergétique, bureau d'étude 3D, rénovation intérieure et construction second œuvre. Solutions complètes pour vos projets d'énergies renouvelables.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#1e40af",
+                        secondary: "#0f766e",
+                        accent: "#f59e0b"
+                    }
+                }
+            }
+        }
+    </script>
 </head>
-<body>
-  <!-- En-tête + navigation -->
-  <header class="container">
-    <nav class="nav">
-      <a class="logo" href="/">MonSite</a>
-      <button class="burger" aria-expanded="false" aria-controls="menu">☰</button>
-      <ul id="menu" class="menu">
-        <li><a href="#services">Services</a></li>
-        <li><a href="#projets">Projets</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-    <section class="hero">
-      <h1>Je t’aide à <span class="accent">faire X</span></h1>
-      <p>Phrase de valeur claire en une ligne.</p>
-      <a class="btn" href="#contact">Me contacter</a>
+<body class="min-h-screen bg-white font-sans">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center">
+                    <h1 class="text-2xl font-bold text-primary">AFER</h1>
+                    <span class="ml-2 text-sm text-gray-600">Agence Française des Énergies Renouvelables</span>
+                </div>
+                
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#accueil" class="text-gray-700 hover:text-primary font-medium transition-colors">Accueil</a>
+                    <a href="#services" class="text-gray-700 hover:text-primary font-medium transition-colors">Services</a>
+                    <a href="#a-propos" class="text-gray-700 hover:text-primary font-medium transition-colors">À propos</a>
+                    <a href="#contact" class="text-gray-700 hover:text-primary font-medium transition-colors">Contact</a>
+                </nav>
+                
+                <div class="flex items-center space-x-4">
+                    <button class="bg-primary text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                        Devis gratuit
+                    </button>
+                    <button class="md:hidden text-gray-700">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="bg-gradient-to-r from-primary to-secondary text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="max-w-2xl">
+                <h2 class="text-4xl font-bold mb-4">Votre partenaire en rénovation énergétique</h2>
+                <p class="text-xl mb-8">Experts en solutions durables pour votre habitat et vos projets de construction</p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <button class="bg-accent text-white px-6 py-3 rounded-lg font-semibold hover:bg-yellow-600 transition-colors">
+                    Simulation gratuite
+                    </button>
+                    <button class="bg-white text-primary px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                    Nos réalisations
+                    </button>
+                </div>
+            </div>
+        </div>
     </section>
-  </header>
 
-  <!-- Contenu principal -->
-  <main class="container">
-    <section id="services">
-      <h2>Services</h2>
-      <div class="grid">
-        <article class="card"><h3>Service A</h3><p>Brève description.</p></article>
-        <article class="card"><h3>Service B</h3><p>Brève description.</p></article>
-        <article class="card"><h3>Service C</h3><p>Brève description.</p></article>
-      </div>
-    </section>
-
-    <section id="projets">
-      <h2>Projets</h2>
-      <div class="grid">
-        <article class="card"><img src="assets/projet1.jpg" alt="Aperçu projet 1"><h3>Projet 1</h3></article>
-        <article class="card"><img src="assets/projet2.jpg" alt="Aperçu projet 2"><h3>Projet 2</h3></article>
-        <article class="card"><img src="assets/projet3.jpg" alt="Aperçu projet 3"><h3>Projet 3</h3></article>
-      </div>
-    </section>
-
-    <section id="contact">
-      <h2>Contact</h2>
-      <!-- Formulaire via Formspree (remplace l'URL ci-dessous par la tienne) -->
-      <form action="https://formspree.io/f/xxxxxxxx" method="POST" class="form">
-        <label>Nom <input name="name" required></label>
-        <label>Email <input name="email" type="email" required></label>
-        <label>Message <textarea name="message" required></textarea></label>
-        <button class="btn" type="submit">Envoyer</button>
-      </form>
-    </section>
-  </main>
-
-  <footer class="container footer">
-    <small>© <span id="year"></span> Ton Nom — Tous droits réservés.</small>
-  </footer>
-
-  <script src="script.js" defer></script>
+    <!-- (le reste du contenu : services, à-propos, contact, footer, scripts) -->
+    <!-- ⚠️ garde tout le code complet du fichier DeepSite jusqu’à la dernière ligne </html> -->
 </body>
 </html>
